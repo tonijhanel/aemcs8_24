@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/conf/adobeagsjan" mode="merge"/>
+    <filter root="/content/adobeagsjan" mode="merge"/>
+    <filter root="/content/dam/adobeagsjan" mode="merge">
+        <exclude pattern="/content/dam/adobeagsjan(/.*)?"/>
+        <include pattern="/content/dam/adobeagsjan/jcr:content(/.*)?"/>
+    </filter>
+    <filter root="/content/dam/adobeagsjan/asset.jpg" mode="merge"/>
+    <filter root="/content/experience-fragments/adobeagsjan" mode="merge"/>
+    <filter root="/content/dam/formsanddocuments-themes/adobeagsjan" mode="merge"/>
+    <filter root="/content/dam/formsanddocuments-fdm/adobeagsjan" mode="merge"/>
+    <filter root="/content/dam/adobeagsjan/sample_logo.png" mode="merge"/>
+    <filter root="/content/dam/adobeagsjan/sample_terms.png" mode="merge"/>
+    <filter root="/content/dam/adobeagsjan/wknd_logo.png" mode="merge"/>
+    <filter root="/conf/deltadental" mode="merge"/>
+    <filter root="/content/deltadental" mode="merge"/>
+    <filter root="/content/dam/deltadental" mode="merge">
+        <exclude pattern="/content/dam/deltadental(/.*)?"/>
+        <include pattern="/content/dam/deltadental/jcr:content(/.*)?"/>
+    </filter>
+    <filter root="/content/dam/deltadental/asset.jpg" mode="merge"/>
+    <filter root="/content/experience-fragments/deltadental" mode="merge"/>
+    <filter root="/content/dam/formsanddocuments-themes/deltadental" mode="merge"/>
+    <filter root="/content/dam/formsanddocuments-fdm/deltadental" mode="merge"/>
+    <filter root="/content/dam/deltadental/sample_logo.png" mode="merge"/>
+    <filter root="/content/dam/deltadental/sample_terms.png" mode="merge"/>
+    <filter root="/content/dam/deltadental/wknd_logo.png" mode="merge"/>
+</workspaceFilter>

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="Doc Var to Asset"
+          sling:resourceType="cq/gui/components/authoring/dialog"
+          extraClientlibs="[cq.workflow-util,cq.aem.forms.workflow-generateNonIntPdf]">
+    <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/tabs">
+        <items jcr:primaryType="nt:unstructured">
+            <processcommon
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Common"
+                    sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <basic
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <title
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            disabled="false"
+                                            fieldLabel="Title"
+                                            name="./jcr:title"/>
+                                    <description
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                            disabled="false"
+                                            fieldLabel="Description"
+                                            name="./jcr:description"/>
+                                </items>
+                            </basic>
+                            <advanced
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Advanced Settings"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <advance
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                            fieldDescription="Check if your handler will advance to the next step."
+                                            fieldLabel="Handler Advance"
+                                            name="./metaData/PROCESS_AUTO_ADVANCE"
+                                            text="Handler Advance"
+                                            value="true"/>
+                                </items>
+                            </advanced>
+                        </items>
+                    </column>
+                </items>
+            </processcommon>
+            <parameters
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Parameters"
+                    sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <assetvarContainer
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <inputDocumentFieldSet
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/include"
+                                            path="fd/workflow/components/common/inputOutputComponent"/>
+                                </items>
+                                <granite:data
+                                        jcr:primaryType="nt:unstructured"
+                                        categories="VARIABLE"
+                                        label="Select Variable containing document"
+                                        name="assetvar"
+                                        required="true"
+                                        variabletype="com.adobe.aemfd.docmanager.Document org.w3c.dom.Document"/>
+                            </assetvarContainer>
+                            <contentrootContainer
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <inputDocumentFieldSet
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/include"
+                                            path="fd/workflow/components/common/inputOutputComponent"/>
+                                </items>
+                                <granite:data
+                                        jcr:primaryType="nt:unstructured"
+                                        categories="RELATIVE_PLOAD ABSOLUTE_PATH VARIABLE"
+                                        label="Where to create Asset"
+                                        name="assetfolder"
+                                        required="true"
+                                        variabletype="java.lang.String"/>
+                            </contentrootContainer>
+                            <assetContainer
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <inputDocumentFieldSet
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/include"
+                                            path="fd/workflow/components/common/inputOutputComponent"/>
+                                </items>
+                                <granite:data
+                                        jcr:primaryType="nt:unstructured"
+                                        categories="VARIABLE WF_METADATA"
+                                        label="Asset Filename"
+                                        name="assetname"
+                                        required="false"
+                                        variabletype="java.lang.String"/>
+                            </assetContainer>
+                            <savetoContainer
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <inputDocumentFieldSet
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/include"
+                                            path="fd/workflow/components/common/inputOutputComponent"/>
+                                </items>
+                                <granite:data
+                                        jcr:primaryType="nt:unstructured"
+                                        categories="VARIABLE"
+                                        label="New Asset Path Saved Here"
+                                        name="saveto"
+                                        required="false"
+                                        variabletype="java.lang.String"/>
+                            </savetoContainer>
+
+                        </items>
+                    </column>
+                </items>
+            </parameters>            <common
+                    cq:hideOnEdit="true"
+                    jcr:primaryType="nt:unstructured"/>
+            <process
+                    cq:hideOnEdit="true"
+                    jcr:primaryType="nt:unstructured"/>
+        </items>
+    </content>
+</jcr:root>

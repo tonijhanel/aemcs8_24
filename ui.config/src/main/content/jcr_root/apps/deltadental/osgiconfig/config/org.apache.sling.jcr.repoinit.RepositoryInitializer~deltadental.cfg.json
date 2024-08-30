@@ -1,0 +1,7 @@
+{
+    "scripts": [
+        "create path (sling:OrderedFolder) /content/dam/deltadental",
+        "create path (nt:unstructured) /content/dam/deltadental/jcr:content",
+        "set properties on /content/dam/deltadental/jcr:content\n  set cq:conf{String} to /conf/deltadental\n  set jcr:title{String} to \"Delta Dental\"\nend"
+    ]
+}

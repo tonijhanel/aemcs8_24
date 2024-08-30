@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/apps/adobeagsjan/clientlibs"/>
+    <filter root="/apps/adobeagsjan/components"/>
+    <filter root="/apps/adobeagsjan/i18n"/>
+    <filter root="/apps/deltadental" />
+    <filter root="/apps/fd/af/themes" mode="merge"/>
+    <filter root="/apps/deltadental/clientlibs"/>
+    <filter root="/apps/deltadental/components"/>
+    <filter root="/apps/deltadental/i18n"/>
+</workspaceFilter>
